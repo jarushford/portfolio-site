@@ -43,6 +43,12 @@ header i {
   bottom: -109px;
   font-size: 5rem;
   color: #c5652a;
+  transition: 0.4s;
+  cursor: pointer;
+}
+header i:hover {
+  color: #d8804a;
+  transition: 0.4s;
 }
 
 h1 {
@@ -65,6 +71,10 @@ h1 span {
   letter-spacing: 4px;
   margin-top: 20px;
   z-index: 10;
+}
+
+.header-animation {
+  background: red;
 }
 
 /*# sourceMappingURL=styles.css.map */

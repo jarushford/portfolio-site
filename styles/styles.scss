@@ -57,6 +57,13 @@ header {
     bottom: -109px;
     font-size: 5rem;
     color: $accent;
+    transition: .4s;
+    cursor: pointer;
+    
+    &:hover {
+      color: lighten($accent, 10%);
+      transition: .4s;
+    }
   }
 }
 
@@ -71,4 +78,8 @@ h1 {
 
 .subtitle {
     @include header-text(1.6rem, 4px, 20px, darken($accent, 3%));
+}
+
+.header-animation {
+  background: red;
 }
