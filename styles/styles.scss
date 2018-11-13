@@ -1,0 +1,32 @@
+$primaryColor: #96E6DA;
+$secondaryColor: #96CAE6;
+
+@mixin angled-header($color) {
+  width: 100%;
+  height: 60vh;
+  background: $color;
+  opacity: .4;
+  filter: blur(1px);
+  position: absolute;
+  top: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+body {
+  background-image: url(../assets/bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.angled-header-one {
+  @include angled-header($primaryColor);
+}
+
+.angled-header-two {
+  @include angled-header($secondaryColor);
+}
+
