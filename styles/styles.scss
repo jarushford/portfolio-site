@@ -1,14 +1,27 @@
-$primaryColor: #96E6DA;
-$secondaryColor: #96CAE6;
+$primaryColor: #0facb0;
+$secondaryColor: #2884bd;
+$darkGrey: #696969;
+$lightGrey: #c9c9c9;
+$accent: #c5652a;
 
-@mixin angled-header($color) {
+
+@mixin angled-header($color, $opacity) {
   width: 100%;
-  height: 60vh;
+  height: 65vh;
   background: $color;
-  opacity: .4;
-  filter: blur(1px);
+  opacity: $opacity;
+  filter: blur(.5px);
   position: absolute;
   top: 0;
+}
+
+@mixin header-text($size, $spacing, $margintop, $color) {
+  color: $color;
+  font-size: $size;
+  font-family: "Bangers", cursive;
+  letter-spacing: $spacing;
+  margin-top: $margintop;
+  z-index: 10;
 }
 
 * {
@@ -20,13 +33,42 @@ body {
   background-image: url(../assets/bg.jpg);
   background-attachment: fixed;
   background-size: cover;
+  font-family: 'Raleway', sans-serif;
 }
 
 .angled-header-one {
-  @include angled-header($primaryColor);
+  @include angled-header($primaryColor, .45);
 }
 
 .angled-header-two {
-  @include angled-header($secondaryColor);
+  @include angled-header($secondaryColor, .3);
 }
 
+header {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  i {
+    position: absolute;
+    bottom: -109px;
+    font-size: 5rem;
+    color: $accent;
+  }
+}
+
+h1 {
+  @include header-text(8.5rem, 7px, 0, $accent);
+
+  span {
+    display: block;
+    margin-left: 90px;
+  }
+}
+
+.subtitle {
+    @include header-text(1.6rem, 4px, 20px, darken($accent, 3%));
+}
