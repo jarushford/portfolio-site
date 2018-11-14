@@ -6,7 +6,6 @@
 $primaryColor: #0facb0;
 $secondaryColor: #2884bd;
 $darkGrey: #696969;
-$lightGrey: #c9c9c9;
 $accent: #843543;
 $accent2: #c5652a;
 
@@ -45,7 +44,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: 'Raleway', sans-serif;
-  height: 1000vh;
   transition: 1.6s;
 }
 
@@ -309,6 +307,20 @@ h1 {
   }
 }
 
+.project-color {
+  h2,
+  & ~ .about,
+  & ~ .fa-chevron-circle-up {
+    color: $primaryColor;
+    transition: 1s;
+  }
+
+  .hamburger-bar,
+  .exit-bar {
+    background: $primaryColor;
+  }
+}
+
 .menu {
   position: fixed;
   top: 65px;
@@ -413,6 +425,48 @@ svg {
 .fa-js {
   color: #f0db4f;
 }
+
+.projects-header {
+  @include header-text(3rem, 4px, 50px, $primaryColor);
+  text-align: center;
+}
+
+.contact-header {
+  @include header-text(3rem, 4px, 100px, $accent);
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  width: 85%;
+  margin: 70px auto 100px;
+  grid-gap: 50px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+
+  div {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background: black;
+    margin: 0 auto;
+  }
+}
+
+.contact {
+  height: 55vh;
+  display: grid;
+  width: 60%;
+  margin: 50px auto;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+  i {
+    font-size: 8rem;
+    text-align: center;
+  }
+}
+
+
 
 
 
