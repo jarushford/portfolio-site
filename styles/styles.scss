@@ -20,7 +20,7 @@ $accent: #c5652a;
 @mixin header-text($size, $spacing, $margintop, $color) {
   color: $color;
   font-size: $size;
-  font-family: "Bangers", cursive;
+  font-family: "Bangers", sans-serif;
   letter-spacing: $spacing;
   margin-top: $margintop;
   z-index: 10;
@@ -40,11 +40,11 @@ body {
 }
 
 .angled-header-one {
-  @include angled-header($primaryColor, .45, 2);
+  @include angled-header($primaryColor, .45, -1);
 }
 
 .angled-header-two {
-  @include angled-header($secondaryColor, .3, 3);
+  @include angled-header($secondaryColor, .3, 1);
 }
 
 header {
@@ -114,6 +114,29 @@ h1 {
   }
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  opacity: 0;
+  transition: 1s;
+
+  img {
+    border-radius: 50%;
+    border: 8px solid $accent;
+  }
+
+  h3 {
+    @include header-text(3rem, 1px, 15px, $accent);
+    font-family: 'Raleway';
+    text-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
+    background: rgba(222, 222, 222, 0.7);
+    padding: 7px;
+  }
+}
+
 .header-animation {
   .angled-header-one {
     width: 130%;
@@ -128,8 +151,10 @@ h1 {
   }
 
   h2,
-  .hamburger {
+  .hamburger,
+  & ~ .about {
     opacity: 1;
+    transition: 1s;
   }
 
   h1,
@@ -143,6 +168,7 @@ h1 {
 .menu-rotate {
   .angled-header-two {
     transform: rotate(0deg) translateY(-305px);
+    opacity: .4;
   }
 
   .menu-item {
@@ -173,4 +199,5 @@ h1 {
   opacity: 0;
   transition: 1.2s;
 }
+
 

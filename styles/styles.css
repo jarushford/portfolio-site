@@ -19,7 +19,7 @@ body {
   filter: blur(0.5px);
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: -1;
   transition: 1.2s;
 }
 
@@ -31,7 +31,7 @@ body {
   filter: blur(0.5px);
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 1;
   transition: 1.2s;
 }
 
@@ -60,7 +60,7 @@ header i:hover {
 h1 {
   color: #c5652a;
   font-size: 8.5rem;
-  font-family: "Bangers", cursive;
+  font-family: "Bangers", sans-serif;
   letter-spacing: 7px;
   margin-top: 0;
   z-index: 10;
@@ -74,7 +74,7 @@ h1 span {
 .subtitle {
   color: #b85f27;
   font-size: 1.6rem;
-  font-family: "Bangers", cursive;
+  font-family: "Bangers", sans-serif;
   letter-spacing: 4px;
   margin-top: 20px;
   z-index: 10;
@@ -83,7 +83,7 @@ h1 span {
 .alt-header h2 {
   color: #c5652a;
   font-size: 2.5rem;
-  font-family: "Bangers", cursive;
+  font-family: "Bangers", sans-serif;
   letter-spacing: 3px;
   margin-top: auto;
   z-index: 10;
@@ -110,6 +110,32 @@ h1 span {
   background: #c5652a;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  opacity: 0;
+  transition: 1s;
+}
+.about img {
+  border-radius: 50%;
+  border: 8px solid #c5652a;
+}
+.about h3 {
+  color: #c5652a;
+  font-size: 3rem;
+  font-family: "Bangers", sans-serif;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  z-index: 10;
+  font-family: "Raleway";
+  text-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
+  background: rgba(222, 222, 222, 0.7);
+  padding: 7px;
+}
+
 .header-animation .angled-header-one {
   width: 130%;
   transform: rotate(20deg) translateY(-480px);
@@ -121,8 +147,9 @@ h1 span {
   transition: 1.2s;
 }
 .header-animation h2,
-.header-animation .hamburger {
+.header-animation .hamburger, .header-animation ~ .about {
   opacity: 1;
+  transition: 1s;
 }
 .header-animation h1,
 .header-animation .subtitle,
@@ -133,6 +160,7 @@ h1 span {
 
 .menu-rotate .angled-header-two {
   transform: rotate(0deg) translateY(-305px);
+  opacity: 0.4;
 }
 .menu-rotate .menu-item {
   opacity: 1;
@@ -157,7 +185,7 @@ h1 span {
 .menu-item {
   color: #b85f27;
   font-size: 1.5rem;
-  font-family: "Bangers", cursive;
+  font-family: "Bangers", sans-serif;
   letter-spacing: 4px;
   margin-top: auto;
   z-index: 10;
