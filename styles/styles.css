@@ -290,6 +290,15 @@ h1 span {
   background: #0facb0;
 }
 
+.contact-color h2, .contact-color ~ .about, .contact-color ~ .fa-chevron-circle-up {
+  color: #843543;
+  transition: 1s;
+}
+.contact-color .hamburger-bar,
+.contact-color .exit-bar {
+  background: #843543;
+}
+
 .menu {
   position: fixed;
   top: 65px;

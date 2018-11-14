@@ -321,6 +321,20 @@ h1 {
   }
 }
 
+.contact-color {
+  h2,
+  & ~ .about,
+  & ~ .fa-chevron-circle-up {
+    color: $accent;
+    transition: 1s;
+  }
+
+  .hamburger-bar,
+  .exit-bar {
+    background: $accent;
+  }
+}
+
 .menu {
   position: fixed;
   top: 65px;

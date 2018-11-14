@@ -1,6 +1,7 @@
 $(window).scroll(() => {
   checkHeader();
   checkProjects();
+  checkContact();
 });
 
 function checkHeader() {
@@ -15,10 +16,19 @@ function checkHeader() {
 
 function checkProjects() {
   let distanceFromTop = $(window).scrollTop() - $('.projects').offset().top;
-  if (distanceFromTop > -231) {
+  if (distanceFromTop > -256) {
     $('header').addClass('project-color');
   } else {
     $('header').removeClass('project-color');
+  }
+}
+
+function checkContact() {
+  let distanceFromTop = $(window).scrollTop() - $('.contact').offset().top;
+  if (distanceFromTop > -300) {
+    $('header').addClass('contact-color');
+  } else {
+    $('header').removeClass('contact-color');
   }
 }
 
@@ -47,19 +57,25 @@ $('.fa-chevron-circle-up').on('click', () => {
 
 $('.projects-text-link').on('click', () => {
   $([document.documentElement, document.body]).animate({
-        scrollTop: $('.projects').offset().top - 230
+        scrollTop: $('.projects').offset().top - 255
     }, 900);
 });
 
 $('.projects-link').on('click', () => {
   $([document.documentElement, document.body]).animate({
-        scrollTop: $('.projects').offset().top - 230
+        scrollTop: $('.projects').offset().top - 255
     }, 900);
 });
 
 $('.about-link').on('click', () => {
   $([document.documentElement, document.body]).animate({
         scrollTop: $('.about').offset().top - 185
+    }, 900);
+});
+
+$('.contact-link').on('click', () => {
+  $([document.documentElement, document.body]).animate({
+        scrollTop: $('.contact').offset().top - 280
     }, 900);
 });
 
