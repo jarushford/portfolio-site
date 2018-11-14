@@ -11,5 +11,21 @@ $(window).scroll(() => {
 });
 
 $('.hamburger').on('click', () => {
-  $('header').toggleClass('menu-rotate');
+  $('header').addClass('menu-rotate');
+});
+
+$('.hamburger-exit').on('click', () => {
+  $('header').removeClass('menu-rotate');
+});
+
+$('.fa-angle-down').on('click', () => {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $('.about').offset().top - 100
+    }, 700);
+});
+
+$('.fa-chevron-circle-up').on('click', () => {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $('body').offset().top
+    }, 700);
 });
