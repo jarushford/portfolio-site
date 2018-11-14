@@ -8,11 +8,14 @@
 }
 
 body {
-  background-image: url(../assets/bg.jpg);
+  background: url(../assets/bg.jpg);
+  background-color: rgba(255, 255, 255, 0.45);
+  background-blend-mode: lighten;
   background-attachment: fixed;
   background-size: cover;
   font-family: "Raleway", sans-serif;
   height: 1000vh;
+  transition: 1.6s;
 }
 
 .angled-header-one {
@@ -23,7 +26,7 @@ body {
   filter: blur(0.5px);
   position: fixed;
   top: 0;
-  z-index: -1;
+  z-index: -2;
   transition: 1.2s;
 }
 
@@ -80,7 +83,7 @@ h1 span {
   color: #79313d;
   font-size: 1.6rem;
   font-family: "Soap", sans-serif;
-  letter-spacing: 4px;
+  letter-spacing: 10px;
   margin-top: 20px;
   z-index: 10;
   cursor: default;
@@ -153,7 +156,7 @@ h1 span {
   opacity: 0;
   transition: 1s;
 }
-.about img {
+.about .headshot {
   border-radius: 50%;
   border: 8px solid #c5652a;
   width: 450px;
@@ -168,9 +171,61 @@ h1 span {
   cursor: default;
   font-family: "Raleway";
   text-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
-  background: rgba(222, 222, 222, 0.7);
+  background: #dedede;
   padding: 7px;
   z-index: 0;
+  border-radius: 3px;
+  position: relative;
+}
+.about h5 {
+  width: 70%;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 35px;
+  text-align: center;
+  background: #dedede;
+  border-radius: 3px;
+  color: #696969;
+  padding: 12px;
+  z-index: 0;
+  position: relative;
+}
+.about h5 span {
+  color: #c5652a;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.about h5 span a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+.about h5 span a:visited {
+  color: #c5652a;
+}
+.about h5 span:hover,
+.about h5 span a:hover {
+  color: #d77a41;
+  transition: 0.4s;
+}
+
+.callout-notch {
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  background: #dedede;
+  position: absolute;
+  z-index: -1;
+}
+
+.notch1 {
+  top: 5px;
+  left: -5px;
+}
+
+.notch2 {
+  top: 25px;
+  right: -5px;
 }
 
 .header-animation .angled-header-one {
@@ -182,6 +237,8 @@ h1 span {
   width: 130%;
   transform: rotate(-14deg) translateY(-425px);
   transition: 1.2s;
+  background-color: #aac6d8;
+  opacity: 0.92;
 }
 .header-animation h2,
 .header-animation .hamburger, .header-animation ~ .about, .header-animation ~ .fa-chevron-circle-up {
@@ -197,7 +254,8 @@ h1 span {
 .header-animation .subtitle,
 .header-animation i {
   opacity: 0;
-  transition: 1s;
+  transition: 0.6s;
+  cursor: default;
 }
 
 .menu-rotate .angled-header-two {
@@ -264,6 +322,69 @@ h1 span {
   text-shadow: 0 0 20px white;
   opacity: 0;
   transition: 0.7s;
+}
+
+svg {
+  width: 150px;
+}
+
+.skills-grid {
+  width: 85%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 25px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.skills-grid div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills-grid i {
+  font-size: 7rem;
+}
+.skills-grid img {
+  width: 130px;
+}
+.skills-grid h4 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 2.5rem;
+  color: #843543;
+  opacity: 0;
+  filter: blur(5px);
+  transition: 0.7s;
+}
+.skills-grid .zelda {
+  font-size: 1.6rem;
+}
+.skills-grid i:hover ~ h4,
+.skills-grid img:hover ~ h4,
+.skills-grid svg:hover ~ h4 {
+  opacity: 0.8;
+  filter: blur(0.5px);
+  transition: 0.7s;
+}
+
+.fa-react {
+  color: #61dafb;
+}
+
+.fa-html5 {
+  color: #dd4b24;
+}
+
+.fa-css3-alt {
+  color: #249cd9;
+}
+
+.fa-sass {
+  color: #c76494;
+}
+
+.fa-js {
+  color: #f0db4f;
 }
 
 /*# sourceMappingURL=styles.css.map */
