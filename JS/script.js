@@ -4,6 +4,9 @@ $(window).scroll(() => {
       $('header').addClass(`header-animation`);
     } else {
       $('header').removeClass(`header-animation`);
+      if ($('header').hasClass('menu-rotate')) {
+        $('header').removeClass('menu-rotate');
+      }
     }
 });
 
