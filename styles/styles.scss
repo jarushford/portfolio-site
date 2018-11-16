@@ -32,6 +32,13 @@ $accent2: #c5652a;
   cursor: default;
 }
 
+@mixin project($source) {
+  background: url($source);
+  background-size: cover;
+  background-position: center;
+  transition: .5s;
+}
+
 * {
   box-sizing: border-box;
   font-size: 10px;
@@ -52,7 +59,7 @@ body {
 }
 
 .angled-header-two {
-  @include angled-header($secondaryColor, .3, 1);
+  @include angled-header($secondaryColor, .3, 6);
 }
 
 header {
@@ -457,13 +464,96 @@ svg {
   grid-gap: 50px 20px;
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
 
-  div {
+  .project {
     width: 440px;
     height: 440px;
     border-radius: 50%;
-    background: black;
+    border: 8px solid $primaryColor;
     margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+      font-size: 2rem;
+      color: #111;
+      z-index: 3;
+      opacity: 0;
+      transition: .6s;
+    }
+
+    i {
+      font-size: 4rem;
+      color: #111;
+      margin: 20px 30px;
+      opacity: 0;
+      transition: .6s;
+    }
+
+    .icons-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      z-index: 3;
+
+      h4 {
+        text-align: center;
+        font-size: 1.3rem;
+        color: #111;
+        opacity: 0;
+        transition: .5s;
+      }
+
+      .github:hover ~ .view-code {
+        opacity: 1;
+        transition: .5s;
+      }
+
+      .site:hover ~ .live-site {
+        opacity: 1;
+        transition: .5s;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(230, 230, 230, 0.9);
+      border-radius: 50%;
+      transition: .5s;
+      opacity: 0;
+      z-index: 2;
+    }
+
+    &:hover::before,
+    &:hover h3,
+    &:hover i {
+      opacity: 1;
+      transition: .5s;
+    }
   }
+}
+
+.wheel-of-fortune {
+  @include project('../assets/wheel-of-fortune.png');
+}
+
+.plenty-of-phish {
+  @include project('../assets/plenty-of-phish.png');
+}
+
+.rabbit-hole {
+  @include project('../assets/rabbit-hole.png');
+}
+
+.comp-challenge {
+  @include project('../assets/comp-challenge.png');
 }
 
 .contact {

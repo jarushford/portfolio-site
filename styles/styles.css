@@ -37,7 +37,7 @@ body {
   filter: blur(0.5px);
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 6;
   transition: 1.2s;
 }
 
@@ -433,12 +433,97 @@ svg {
   grid-gap: 50px 20px;
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
 }
-.projects div {
+.projects .project {
   width: 440px;
   height: 440px;
   border-radius: 50%;
-  background: black;
+  border: 8px solid #0facb0;
   margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.projects .project h3 {
+  font-size: 2rem;
+  color: #111;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.6s;
+}
+.projects .project i {
+  font-size: 4rem;
+  color: #111;
+  margin: 20px 30px;
+  opacity: 0;
+  transition: 0.6s;
+}
+.projects .project .icons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 3;
+}
+.projects .project .icons-container h4 {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #111;
+  opacity: 0;
+  transition: 0.5s;
+}
+.projects .project .icons-container .github:hover ~ .view-code {
+  opacity: 1;
+  transition: 0.5s;
+}
+.projects .project .icons-container .site:hover ~ .live-site {
+  opacity: 1;
+  transition: 0.5s;
+}
+.projects .project::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230, 230, 230, 0.9);
+  border-radius: 50%;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 2;
+}
+.projects .project:hover::before, .projects .project:hover h3, .projects .project:hover i {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.wheel-of-fortune {
+  background: url("../assets/wheel-of-fortune.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.plenty-of-phish {
+  background: url("../assets/plenty-of-phish.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.rabbit-hole {
+  background: url("../assets/rabbit-hole.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.comp-challenge {
+  background: url("../assets/comp-challenge.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
 }
 
 .contact {
