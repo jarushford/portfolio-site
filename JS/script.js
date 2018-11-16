@@ -97,5 +97,19 @@ $('.fa-envelope').on('mouseleave', () => {
     $('.email-popup').removeClass('copied');
     $('.email-notch').removeClass('copied-notch');
   }, 600);
-})
+});
+
+$('.project').on('mouseover', () => {
+  const icons = Array.from($('.tech'));
+  icons.forEach(icon => {
+    $(icon).addClass(`${$(icon).attr('id')}-display`);
+  })
+});
+
+$('.project').on('mouseleave', () => {
+  const icons = Array.from($('.tech'));
+  icons.forEach(icon => {
+    $(icon).removeClass(`${$(icon).attr('id')}-display`);
+  })
+});
 

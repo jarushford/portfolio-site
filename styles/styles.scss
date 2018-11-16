@@ -503,6 +503,17 @@ svg {
       transition: .6s;
     }
 
+    .tech {
+      opacity: 0;
+      position: absolute;
+      top: 170px;
+      left: 158px;
+    }
+
+    .tech1-display {
+      animation: slideIn 1.5s linear forwards;
+    }
+
     .icons-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -549,6 +560,17 @@ svg {
       transition: .5s;
     }
   }
+}
+
+@keyframes slideIn {
+    from { 
+      transform: rotate(0deg) translateX(150px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(90deg) translateX(150px) rotate(-90deg); 
+      opacity: 1;
+    }
 }
 
 .wheel-of-fortune {
