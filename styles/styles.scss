@@ -471,7 +471,6 @@ svg {
     border: 8px solid $primaryColor;
     margin: 0 auto;
     position: relative;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -483,6 +482,17 @@ svg {
       z-index: 3;
       opacity: 0;
       transition: .6s;
+    }
+
+    p {
+      margin-top: 15px;
+      width: 80%;
+      color: #111;
+      z-index: 3;
+      opacity: 0;
+      transition: .5s;
+      text-align: center;
+      line-height: 23px;
     }
 
     i {
@@ -533,7 +543,8 @@ svg {
 
     &:hover::before,
     &:hover h3,
-    &:hover i {
+    &:hover i,
+    &:hover p {
       opacity: 1;
       transition: .5s;
     }
@@ -562,13 +573,74 @@ svg {
   width: 60%;
   margin: 50px auto;
   grid-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(159px, 1fr));
 
   i {
     font-size: 8rem;
     text-align: center;
+    color: black;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .fa-envelope:hover ~ .email-popup,
+  .fa-envelope:hover ~ .email-notch {
+    opacity: 1;
+    transition: .5s;
+  }
+
+  a {
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .fa-linkedin {
+    color: #0077b5;
   }
 }
+
+.email-container {
+  position: relative;
+}
+
+.email-notch {
+  width: 20px;
+  height: 20px;
+  top: 127.6px;
+  background: rgba(0, 0, 0, 0.65);
+  -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  position: absolute;
+  border: none;
+  opacity: 0;
+  transition: .5s;
+}
+
+.email-popup {
+  opacity: 0;
+  transition: .5s;
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 140px;
+  left: -9px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: 'Raleway';
+  color: #eee;
+  background: rgba(0, 0, 0, 0.65);
+  border: none;
+  text-align: center;
+}
+
+
 
 
 

@@ -16,7 +16,7 @@ function checkHeader() {
 
 function checkProjects() {
   let distanceFromTop = $(window).scrollTop() - $('.projects').offset().top;
-  if (distanceFromTop > -256) {
+  if (distanceFromTop > -271) {
     $('header').addClass('project-color');
   } else {
     $('header').removeClass('project-color');
@@ -57,13 +57,13 @@ $('.fa-chevron-circle-up').on('click', () => {
 
 $('.projects-text-link').on('click', () => {
   $([document.documentElement, document.body]).animate({
-        scrollTop: $('.projects').offset().top - 255
+        scrollTop: $('.projects').offset().top - 270
     }, 900);
 });
 
 $('.projects-link').on('click', () => {
   $([document.documentElement, document.body]).animate({
-        scrollTop: $('.projects').offset().top - 255
+        scrollTop: $('.projects').offset().top - 270
     }, 900);
 });
 
@@ -78,4 +78,20 @@ $('.contact-link').on('click', () => {
         scrollTop: $('.contact').offset().top - 280
     }, 900);
 });
+
+$('.fa-envelope').on('click', () => {
+  const el = document.createElement('textarea');
+  el.value = 'jar.rushford@gmail.com';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  $('.email-popup').text('Copied!');
+});
+
+$('.fa-envelope').on('mouseleave', () => {
+  setTimeout(() => {
+    $('.email-popup').text('This will copy my email address to your clipboard');
+  }, 600);
+})
 
