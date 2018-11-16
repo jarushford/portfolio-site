@@ -99,14 +99,14 @@ $('.fa-envelope').on('mouseleave', () => {
   }, 600);
 });
 
-$('.project').on('mouseover', () => {
-  const icons = Array.from($('.tech'));
+$('.project').on('mouseover', function() {
+  const icons = Array.from($(this).children('.icons-container').children('.tech'));
   icons.forEach(icon => {
     $(icon).addClass(`${$(icon).attr('id')}-display`);
   })
 });
 
-$('.project').on('mouseleave', () => {
+$('.project').on('mouseleave', function() {
   const icons = Array.from($('.tech'));
   icons.forEach(icon => {
     $(icon).removeClass(`${$(icon).attr('id')}-display`);

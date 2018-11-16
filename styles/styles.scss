@@ -497,10 +497,14 @@ svg {
 
     i {
       font-size: 4rem;
-      color: #111;
       margin: 20px 30px;
       opacity: 0;
       transition: .6s;
+    }
+
+    .fa-github,
+    .fa-globe {
+      color: #111;
     }
 
     .tech {
@@ -508,10 +512,30 @@ svg {
       position: absolute;
       top: 170px;
       left: 158px;
+      font-size: 2.5rem;
+    }
+
+    .jquery-tech {
+      width: 50px;
+      height: 50px;
+      top: 187px;
+      left: 190px;
     }
 
     .tech1-display {
       animation: slideIn 1.5s linear forwards;
+    }
+
+    .tech2-display {
+      animation: slideIn2 1.5s linear forwards;
+    }
+
+    .tech3-display {
+      animation: slideIn3 1.5s linear forwards;
+    }
+
+    .tech4-display {
+      animation: slideIn4 1.5s linear forwards;
     }
 
     .icons-container {
@@ -564,11 +588,44 @@ svg {
 
 @keyframes slideIn {
     from { 
-      transform: rotate(0deg) translateX(150px) rotate(0deg);
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
       opacity: 0; 
     }
     to { 
-      transform: rotate(90deg) translateX(150px) rotate(-90deg); 
+      transform: rotate(150deg) translateX(170px) rotate(-150deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes slideIn2 {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(110deg) translateX(170px) rotate(-110deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes slideIn3 {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(70deg) translateX(170px) rotate(-70deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes slideIn4 {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(25deg) translateX(170px) rotate(-25deg); 
       opacity: 1;
     }
 }
