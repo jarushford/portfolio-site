@@ -255,7 +255,7 @@ h1 {
     transform: rotate(-14deg) translateY(-425px);
     transition: 1.2s;
     background-color: #aac6d8;
-    opacity: .92;
+    opacity: .95;
   }
 
   h2,
@@ -318,13 +318,13 @@ h1 {
   h2,
   & ~ .about,
   & ~ .fa-chevron-circle-up {
-    color: $primaryColor;
+    color: darken($primaryColor, 4%);
     transition: 1s;
   }
 
   .hamburger-bar,
   .exit-bar {
-    background: $primaryColor;
+    background: darken($primaryColor, 4%);
   }
 }
 
@@ -568,7 +568,7 @@ svg {
 }
 
 .contact {
-  height: 55vh;
+  height: 40vh;
   display: grid;
   width: 60%;
   margin: 50px auto;
@@ -610,7 +610,7 @@ svg {
   width: 20px;
   height: 20px;
   top: 127.6px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgb(100, 100, 100);
   -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
   clip-path: polygon(50% 0%, 0 62%, 100% 62%);
   position: absolute;
@@ -635,9 +635,37 @@ svg {
   border-radius: 3px;
   font-family: 'Raleway';
   color: #eee;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgb(100, 100, 100);
   border: none;
   text-align: center;
+}
+
+.copied {
+  transition: .5s;
+  animation: copied .6s forwards;
+}
+
+.copied-notch {
+  transition: .6s;
+  animation: copiednotch .6s forwards;
+}
+
+@keyframes copied {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes copiednotch {
+  0%, 100% {
+    transform: scale(1) translateY(0) translateX(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-3px) translateX(-3px);
+  }
 }
 
 

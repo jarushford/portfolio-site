@@ -25,7 +25,7 @@ function checkProjects() {
 
 function checkContact() {
   let distanceFromTop = $(window).scrollTop() - $('.contact').offset().top;
-  if (distanceFromTop > -300) {
+  if (distanceFromTop > -475) {
     $('header').addClass('contact-color');
   } else {
     $('header').removeClass('contact-color');
@@ -86,12 +86,16 @@ $('.fa-envelope').on('click', () => {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
+  $('.email-popup').addClass('copied');
+  $('.email-notch').addClass('copied-notch');
   $('.email-popup').text('Copied!');
 });
 
 $('.fa-envelope').on('mouseleave', () => {
   setTimeout(() => {
     $('.email-popup').text('This will copy my email address to your clipboard');
+    $('.email-popup').removeClass('copied');
+    $('.email-notch').removeClass('copied-notch');
   }, 600);
 })
 
