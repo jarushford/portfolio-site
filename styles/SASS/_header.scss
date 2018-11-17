@@ -18,6 +18,8 @@ header {
     
     &:hover {
       color: $accent2;
+      transform: scale(1.1) translateY(4px);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       transition: .4s;
     }
   }
@@ -156,11 +158,16 @@ h1 {
 
 .fa-chevron-circle-up {
   @include fixed(fixed, auto, auto, 24px, 24px);
-  @include fade(0, .7s);
+  @include fade(0, .3s);
   font-size: 2.7rem;
   color: $accent2;
   cursor: pointer;
   text-shadow: 0 0 20px $offWhite;
+
+  &:hover {
+    transform: translateY(-3px);
+    transition: .3s;
+  }
 }
 
 

@@ -12,6 +12,13 @@
     color: $offBlack;
     cursor: pointer;
     position: relative;
+    z-index: 51;
+    transition: ease-out .3s;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: ease-out .3s;
+    }
   }
 
   .fa-envelope:hover ~ .email-popup,

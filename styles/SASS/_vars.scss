@@ -24,6 +24,7 @@ svg { width: 150px }
   top: 0;
   z-index: $index;
   transition: 1.2s;
+  box-shadow: 0 0 18px 2px rgba(0, 0, 0, 0.18);
 }
 
 @mixin header-text($size, $spacing, $margintop, $color) {
