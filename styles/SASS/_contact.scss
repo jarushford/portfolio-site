@@ -1,0 +1,67 @@
+.contact {
+  @include size(40vh, 60%);
+  display: grid;
+  max-width: 700px;
+  margin: 50px auto;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+
+  i {
+    font-size: 8rem;
+    text-align: center;
+    color: $offBlack;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .fa-envelope:hover ~ .email-popup,
+  .fa-envelope:hover ~ .email-notch {
+    @include fade(1, .5s);
+  }
+
+  a {
+    @include size(130px, 130px);
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .fa-linkedin { color: #0077b5 }
+}
+
+.email-container { position: relative }
+
+.email-notch {
+  @include fade(0, .5s);
+  @include size(20px, 20px);
+  @include fixed(absolute, 127.6px, auto, auto, auto);
+  background: $darkGrey;
+  -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  border: none;
+}
+
+.email-popup {
+  @include fixed(absolute, 140px, auto, auto, -9px);
+  @include flex(auto, center, center);
+  @include fade(0, .5s);
+  @include size(80px, 150px);
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: 'Raleway';
+  color: $offWhite;
+  background: $darkGrey;
+  border: none;
+  text-align: center;
+}
+
+.copied {
+  transition: .5s;
+  animation: copied .6s forwards;
+}
+
+.copied-notch {
+  transition: .6s;
+  animation: copiednotch .6s forwards;
+}

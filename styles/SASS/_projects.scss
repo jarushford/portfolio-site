@@ -1,0 +1,110 @@
+.wheel-of-fortune { @include project('../assets/wheel-of-fortune.png') }
+.plenty-of-phish { @include project('../assets/plenty-of-phish.png') }
+.rabbit-hole { @include project('../assets/rabbit-hole.png') }
+.comp-challenge { @include project('../assets/comp-challenge.png') }
+
+.projects-header {
+  @include header-text(3rem, 4px, 50px, $primaryColor);
+  text-align: center;
+}
+
+.contact-header {
+  @include header-text(3rem, 4px, 100px, $accent);
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  width: 85%;
+  margin: 70px auto 100px;
+  grid-gap: 50px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+
+  .project {
+    @include flex(column, center, center);
+    @include size(440px, 440px);
+    border-radius: 50%;
+    border: 8px solid $primaryColor;
+    margin: 0 auto;
+    position: relative;
+
+    h3 {
+      @include fade(0, .6s);
+      font-size: 2rem;
+      color: $offBlack;
+      z-index: 3;
+    }
+
+    p {
+      @include fade(0, .5s);
+      margin-top: 15px;
+      width: 80%;
+      color: $offBlack;
+      z-index: 3;
+      text-align: center;
+      line-height: 23px;
+    }
+
+    i {
+      @include fade(0, .6s);
+      font-size: 4rem;
+      margin: 20px 30px;
+    }
+
+    .fa-github,
+    .fa-globe {
+      color: $offBlack;
+    }
+
+    .tech {
+      @include fixed(absolute, 170px, auto, auto, 158px);
+      opacity: 0;
+      font-size: 2.5rem;
+    }
+
+    .jquery-tech,
+    .sketch-tech {
+      @include size(50px, 50px);
+      @include fixed(absolute, 187px, auto, auto, 190px);
+    }
+
+    .tech1-display { animation: slideIn 1.5s ease-out forwards }
+    .tech2-display { animation: slideIn2 1.5s ease-out forwards }
+    .tech3-display { animation: slideIn3 1.5s ease-out forwards }
+    .tech4-display { animation: slideIn4 1.5s ease-out forwards }
+
+    .icons-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      z-index: 3;
+
+      h4 {
+        @include fade(0, .5s);
+        text-align: center;
+        font-size: 1.3rem;
+        color: $offBlack;
+      }
+
+      .github:hover ~ .view-code, 
+      .site:hover ~ .live-site {
+        @include fade(1, .5s);
+      }
+    }
+
+    &::before {
+      @include fixed(absolute, 0, 0, 0, 0);
+      @include fade(0, .5s);
+      content: '';
+      background: rgba(230, 230, 230, 0.9);
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    &:hover::before,
+    &:hover h3,
+    &:hover i,
+    &:hover p {
+      @include fade(1, .5s);
+    }
+  }
+}

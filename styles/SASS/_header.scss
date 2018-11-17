@@ -1,0 +1,195 @@
+.angled-header-one { @include angled-header($primaryColor, .45, -2) }
+.angled-header-two { @include angled-header($secondaryColor, .3, 6) }
+.subtitle { @include header-text(1.6rem, 10px, 20px, darken($accent, 3%)) }
+
+header {
+  @include flex(column, center, center);
+  height: 55vh;
+  position: relative;
+
+  i {
+    @include fixed(fixed, 59vh, auto, auto, auto);
+    font-size: 5rem;
+    color: $accent;
+    transition: 1.5s;
+    cursor: pointer;
+    z-index: 10;
+    
+    &:hover {
+      color: $accent2;
+      transition: .4s;
+    }
+  }
+}
+
+h1 {
+  @include header-text(6rem, 7px, 0, $accent);
+
+  span {
+    display: block;
+    margin-left: 90px;
+  }
+}
+
+
+.alt-header {
+  h2 {
+    @include header-text(2.2rem, 3px, auto, $accent2);
+    @include fixed(fixed, 10px, auto, auto, 15px);
+    @include fade(0, .5s);
+  }
+
+  .hamburger {
+    @include hamburger(4);
+    @include flex(column, space-between, center);
+    background: #aecbdc;
+    transition: .5s;
+  }
+
+  .hamburger-exit {
+    @include fixed(absolute, auto, auto, 2px, 7.5px);
+    @include hamburger(3);
+    @include flex(column, space-between, center);
+  }
+
+  .exit1 {
+    transform: rotate(45deg);
+    transform-origin: left;
+  }
+
+  .exit2 {
+    transform: rotate(-45deg) translateX(-3px) translateY(2px);
+    transform-origin: left;
+  }
+
+  .hamburger-bar,
+  .exit-bar {
+    @include size(10px, 100%);
+    background: $accent2;
+    transition: 1s;
+    border-radius: 1px;
+  }
+}
+
+.header-animation {
+  .angled-header-one {
+    width: 130%;
+    transform: rotate(20deg) translateY(-480px);
+    transition: 1.2s;
+  }
+
+  .angled-header-two {
+    @include fade(.95, 1.2s);
+    width: 130%;
+    transform: rotate(-14deg) translateY(-425px);
+    background-color: #aac6d8;
+  }
+
+  h2,
+  .hamburger,
+  & ~ .about,
+  & ~ .fa-chevron-circle-up {
+    @include fade(1, 1s);
+  }
+
+  .hamburger-exit {
+    @include fade(1, 1s 1s);
+  }
+
+  h1,
+  .subtitle,
+  i {
+    @include fade(0, .6s);
+    cursor: default;
+  }
+}
+
+.menu-rotate {
+  .angled-header-two {
+    transform: rotate(0deg) translateY(-330px);
+    background: $menudropColor;
+    opacity: .9;
+  }
+
+  .menu-item {
+    @include fade(1, 1.9s);
+    transform: translateY(0px);
+  }
+
+  .alt-header {
+    h2 { color: $accent }
+
+    .hamburger-bar,
+    .exit-bar {
+      background-color: $accent;
+      transition: 1s;
+    }
+
+    .hamburger {
+      height: 0;
+      margin-top: 43px;
+      transition: ease 1s;
+    }
+
+  }
+}
+
+.menu {
+  @include fixed(fixed, 65px, auto, auto, 15px);
+  @include flex(auto, space-between, center);
+  z-index: 10;
+}
+
+.menu-items {
+  display: flex;
+  margin-left: 20px;
+}
+
+.menu-item {
+  @include header-text(1.2rem, 4px, auto, darken($accent, 3%));
+  @include fade(0, .9s);
+  margin: auto 10px;
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+
+.fa-chevron-circle-up {
+  @include fixed(fixed, auto, auto, 24px, 24px);
+  @include fade(0, .7s);
+  font-size: 2.7rem;
+  color: $accent2;
+  cursor: pointer;
+  text-shadow: 0 0 20px $offWhite;
+}
+
+
+/////////// ALT MENU COLORS //////////////
+
+
+.project-color {
+  h2,
+  & ~ .about,
+  & ~ .fa-chevron-circle-up {
+    color: darken($primaryColor, 4%);
+    transition: 1s;
+  }
+
+  .hamburger-bar,
+  .exit-bar {
+    background: darken($primaryColor, 4%);
+  }
+}
+
+.contact-color {
+  h2,
+  & ~ .about,
+  & ~ .fa-chevron-circle-up {
+    color: $accent;
+    transition: 1s;
+  }
+
+  .hamburger-bar,
+  .exit-bar {
+    background: $accent;
+  }
+}

@@ -1,0 +1,53 @@
+@keyframes slideIn {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(150deg) translateX(170px) rotate(-150deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes slideIn2 {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(110deg) translateX(170px) rotate(-110deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes slideIn3 {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(70deg) translateX(170px) rotate(-70deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes slideIn4 {
+    from { 
+      transform: rotate(0deg) translateX(170px) rotate(0deg);
+      opacity: 0; 
+    }
+    to { 
+      transform: rotate(25deg) translateX(170px) rotate(-25deg); 
+      opacity: 1;
+    }
+}
+
+@keyframes copied {
+  0%, 100% { transform: scale(1) }
+  50% { transform: scale(1.1) }
+}
+
+@keyframes copiednotch {
+  0%, 100% { transform: scale(1) translateY(0) translateX(0) }
+  50% { transform: scale(1.05) translateY(-3px) translateX(-3px) }
+}

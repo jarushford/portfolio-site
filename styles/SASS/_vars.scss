@@ -1,0 +1,78 @@
+$primaryColor: #0facb0;
+$secondaryColor: #2884bd;
+$menudropColor: #479ace;
+$darkGrey: #696969;
+$accent: #843543;
+$accent2: #c5652a;
+$offBlack: #111;
+$offWhite: #DDD;
+
+.fa-react { color: #61dafb }
+.fa-html5 { color: #dd4b24 }
+.fa-css3-alt { color: #249cd9 }
+.fa-sass { color: #c76494 }
+.fa-js { color: #f0db4f }
+svg { width: 150px }
+
+@mixin angled-header($color, $opacity, $index) {
+  width: 100%;
+  height: 65vh;
+  background: $color;
+  opacity: $opacity;
+  filter: blur(.5px);
+  position: fixed;
+  top: 0;
+  z-index: $index;
+  transition: 1.2s;
+}
+
+@mixin header-text($size, $spacing, $margintop, $color) {
+  color: $color;
+  font-size: $size;
+  font-family: "Soap", sans-serif;
+  letter-spacing: $spacing;
+  margin-top: $margintop;
+  z-index: 10;
+  cursor: default;
+  transition: 1.5s;
+}
+
+@mixin project($source) {
+  background: url($source);
+  background-size: cover;
+  background-position: center;
+  transition: .5s;
+}
+
+@mixin flex($dir, $jc, $ai) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin fixed($pos, $t, $r, $b, $l) {
+  position: $pos;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
+@mixin hamburger($z) {
+  height: 42px;
+  width: 50px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: $z;
+}
+
+@mixin fade($o, $t) {
+  opacity: $o;
+  transition: $t;
+}
+
+@mixin size($h, $w) {
+  height: $h;
+  width: $w;
+}

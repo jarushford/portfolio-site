@@ -1,0 +1,36 @@
+@import "vars";
+@import "keyframes";
+@import "mediaQueries";
+@import "contact";
+@import "projects";
+@import "about";
+@import "header";
+
+@font-face {
+  font-family: 'Soap';
+  src: url('../assets/Soap_Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  background: url(../assets/bg.jpg);
+  background-color: rgba(255, 255, 255, .45);
+  background-blend-mode: lighten;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  transition: 1.6s;
+}
+
+
+
+
+
+
+
+
+
