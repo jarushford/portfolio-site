@@ -515,7 +515,8 @@ svg {
       font-size: 2.5rem;
     }
 
-    .jquery-tech {
+    .jquery-tech,
+    .sketch-tech {
       width: 50px;
       height: 50px;
       top: 187px;
@@ -523,19 +524,19 @@ svg {
     }
 
     .tech1-display {
-      animation: slideIn 1.5s linear forwards;
+      animation: slideIn 1.5s ease-out forwards;
     }
 
     .tech2-display {
-      animation: slideIn2 1.5s linear forwards;
+      animation: slideIn2 1.5s ease-out forwards;
     }
 
     .tech3-display {
-      animation: slideIn3 1.5s linear forwards;
+      animation: slideIn3 1.5s ease-out forwards;
     }
 
     .tech4-display {
-      animation: slideIn4 1.5s linear forwards;
+      animation: slideIn4 1.5s ease-out forwards;
     }
 
     .icons-container {
