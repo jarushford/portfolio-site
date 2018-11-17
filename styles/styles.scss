@@ -5,10 +5,19 @@
 
 $primaryColor: #0facb0;
 $secondaryColor: #2884bd;
+$menudropColor: #479ace;
 $darkGrey: #696969;
 $accent: #843543;
 $accent2: #c5652a;
+$offBlack: #111;
+$offWhite: #DDD;
 
+.fa-react { color: #61dafb }
+.fa-html5 { color: #dd4b24 }
+.fa-css3-alt { color: #249cd9 }
+.fa-sass { color: #c76494 }
+.fa-js { color: #f0db4f }
+svg { width: 150px }
 
 @mixin angled-header($color, $opacity, $index) {
   width: 100%;
@@ -30,6 +39,7 @@ $accent2: #c5652a;
   margin-top: $margintop;
   z-index: 10;
   cursor: default;
+  transition: 1.5s;
 }
 
 @mixin project($source) {
@@ -37,6 +47,21 @@ $accent2: #c5652a;
   background-size: cover;
   background-position: center;
   transition: .5s;
+}
+
+@mixin flex($dir, $jc, $ai) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin fixed($pos, $t, $r, $b, $l) {
+  position: $pos;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
 }
 
 * {
@@ -54,25 +79,26 @@ body {
   transition: 1.6s;
 }
 
-.angled-header-one {
-  @include angled-header($primaryColor, .45, -2);
-}
+.wheel-of-fortune { @include project('../assets/wheel-of-fortune.png') }
+.plenty-of-phish { @include project('../assets/plenty-of-phish.png') }
+.rabbit-hole { @include project('../assets/rabbit-hole.png') }
+.comp-challenge { @include project('../assets/comp-challenge.png') }
 
-.angled-header-two {
-  @include angled-header($secondaryColor, .3, 6);
-}
+
+////////////// MENU / HEADER STYLES ///////////////
+
+
+.angled-header-one { @include angled-header($primaryColor, .45, -2) }
+.angled-header-two { @include angled-header($secondaryColor, .3, 6) }
+.subtitle { @include header-text(1.6rem, 10px, 20px, darken($accent, 3%)) }
 
 header {
   height: 55vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex(column, center, center);
   position: relative;
 
   i {
-    position: fixed;
-    top: 59vh;
+    @include fixed(fixed, 59vh, auto, auto, auto);
     font-size: 5rem;
     color: $accent;
     transition: 1.5s;
@@ -88,7 +114,6 @@ header {
 
 h1 {
   @include header-text(6rem, 7px, 0, $accent);
-  transition: 1.5s;
 
   span {
     display: block;
@@ -96,17 +121,11 @@ h1 {
   }
 }
 
-.subtitle {
-    @include header-text(1.6rem, 10px, 20px, darken($accent, 3%));
-    transition: 1.5s;
-}
 
 .alt-header {
   h2 {
     @include header-text(2.2rem, 3px, auto, $accent2);
-    position: fixed;
-    top: 10px;
-    left: 15px;
+    @include fixed(fixed, 10px, auto, auto, 15px);
     opacity: 0;
     transition: .5s;
   }
@@ -114,11 +133,8 @@ h1 {
   .hamburger {
     height: 42px;
     width: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(column, space-between, center);
     background: #aecbdc;
-    align-items: center;
     opacity: 0;
     transition: .5s;
     cursor: pointer;
@@ -126,14 +142,10 @@ h1 {
   }
 
   .hamburger-exit {
-    position: absolute;
-    left: 7.5px;
-    bottom: 2px;
+    @include fixed(absolute, auto, auto, 2px, 7.5px);
     height: 42px;
     width: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(column, space-between, center);
     z-index: 3;
     opacity: 0;
     cursor: pointer;
@@ -157,90 +169,6 @@ h1 {
     transition: 1s;
     border-radius: 1px;
   }
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -100px;
-  opacity: 0;
-  transition: 1s;
-
-  .headshot {
-    border-radius: 50%;
-    border: 8px solid $accent2;
-    width: 450px;
-  }
-
-  h3 {
-    @include header-text(3rem, 1px, 15px, $accent2);
-    font-family: 'Raleway';
-    text-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
-    background: rgb(222, 222, 222);
-    padding: 7px;
-    z-index: 0;
-    border-radius: 3px;
-    position: relative;
-  }
-
-  h5 {
-    width: 70%;
-    font-size: 1.3rem;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    line-height: 35px;
-    text-align: center;
-    background: rgb(222, 222, 222);
-    border-radius: 3px;
-    color: $darkGrey;
-    padding: 12px;
-    z-index: 0;
-    position: relative;
-
-    span {
-      color: $accent2;
-      cursor: pointer;
-      transition: .4s;
-
-      a {
-        text-decoration: none;
-        transition: .4s;
-      }
-
-      a:visited {
-        color: $accent2;
-      }
-
-      &:hover,
-      a:hover {
-        color: lighten($accent2, 8%);
-        transition: .4s;
-      }
-
-    }
-  }
-}
- 
-
-.callout-notch {
-  width: 40px;
-  height: 40px;
-  transform: rotate(45deg);
-  background: rgb(222, 222, 222);
-  position: absolute;
-  z-index: -1;
-}
-
-.notch1 {
-  top: 5px;
-  left: -5px;
-}
-
-.notch2 {
-  top: 25px;
-  right: -5px;
 }
 
 .header-animation {
@@ -284,7 +212,7 @@ h1 {
 .menu-rotate {
   .angled-header-two {
     transform: rotate(0deg) translateY(-330px);
-    background: #479ace;
+    background: $menudropColor;
     opacity: .9;
   }
 
@@ -295,9 +223,7 @@ h1 {
   }
 
   .alt-header {
-    h2 {
-      color: $accent;
-    }
+    h2 { color: $accent }
 
     .hamburger-bar,
     .exit-bar {
@@ -313,6 +239,40 @@ h1 {
 
   }
 }
+
+.menu {
+  @include fixed(fixed, 65px, auto, auto, 15px);
+  @include flex(auto, space-between, center);
+  z-index: 10;
+}
+
+.menu-items {
+  display: flex;
+  margin-left: 20px;
+}
+
+.menu-item {
+  @include header-text(1.2rem, 4px, auto, darken($accent, 3%));
+  margin: auto 10px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: .9s;
+}
+
+.fa-chevron-circle-up {
+  @include fixed(fixed, auto, auto, 24px, 24px);
+  font-size: 2.7rem;
+  color: $accent2;
+  cursor: pointer;
+  text-shadow: 0 0 20px $offWhite;
+  opacity: 0;
+  transition: .7s;
+}
+
+
+/////////// ALT MENU COLORS //////////////
+
 
 .project-color {
   h2,
@@ -342,45 +302,83 @@ h1 {
   }
 }
 
-.menu {
-  position: fixed;
-  top: 65px;
-  left: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10;
-}
 
-.menu-items {
-  display: flex;
-  margin-left: 20px;
-}
+/////////// ABOUT SECTION ///////////
 
-.menu-item {
-  @include header-text(1.2rem, 4px, auto, darken($accent, 3%));
-  margin: auto 10px;
-  cursor: pointer;
+
+.about {
+  @include flex(column, center, center);
+  margin-top: -100px;
   opacity: 0;
-  transform: translateY(-4px);
-  transition: .9s;
+  transition: 1s;
+
+  .headshot {
+    border-radius: 50%;
+    border: 8px solid $accent2;
+    width: 450px;
+  }
+
+  h3 {
+    @include header-text(3rem, 1px, 15px, $accent2);
+    font-family: 'Raleway';
+    text-shadow: 0 0 7px $offWhite;
+    background: $offWhite;
+    padding: 7px;
+    z-index: 0;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  h5 {
+    width: 70%;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    line-height: 35px;
+    text-align: center;
+    background: $offWhite;
+    border-radius: 3px;
+    color: $darkGrey;
+    padding: 12px;
+    z-index: 0;
+    position: relative;
+
+    span {
+      color: $accent2;
+      cursor: pointer;
+      transition: .4s;
+
+      a {
+        text-decoration: none;
+        transition: .4s;
+      }
+
+      a:visited { color: $accent2 }
+
+      &:hover,
+      a:hover {
+        color: lighten($accent2, 8%);
+        transition: .4s;
+      }
+
+    }
+  }
+}
+ 
+.callout-notch {
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  background: $offWhite;
+  z-index: -1;
 }
 
-.fa-chevron-circle-up {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  font-size: 2.7rem;
-  color: $accent2;
-  cursor: pointer;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-  opacity: 0;
-  transition: .7s;
-}
+.notch1 { @include fixed(absolute, 5px, auto, auto, -5px) }
+.notch2 { @include fixed(absolute, 25px, -5px, auto, auto) }
 
-svg {
-  width: 150px;
-}
+
+/////////// TECH GRID //////////////
+
 
 .skills-grid {
   width: 85%;
@@ -389,20 +387,10 @@ svg {
   grid-gap: 25px 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  i {
-    font-size: 7rem;
-  }
-
-  img {
-    width: 130px;
-  }
+  div { @include flex(column, space-between, center) }
+  i { font-size: 7rem }
+  img { width: 130px }
+  .zelda { font-size: 1.6rem }
 
   h4 {
     text-align: center;
@@ -414,10 +402,6 @@ svg {
     transition: .7s;
   }
 
-  .zelda {
-    font-size: 1.6rem;
-  }
-
   i:hover ~ h4,
   img:hover ~ h4,
   svg:hover ~ h4 {
@@ -427,25 +411,9 @@ svg {
   }
 }
 
-.fa-react {
-  color: #61dafb;
-}
 
-.fa-html5 {
-  color: #dd4b24;
-}
+/////////// PROJECTS SECTION //////////////
 
-.fa-css3-alt {
-  color: #249cd9;
-}
-
-.fa-sass {
-  color: #c76494;
-}
-
-.fa-js {
-  color: #f0db4f;
-}
 
 .projects-header {
   @include header-text(3rem, 4px, 50px, $primaryColor);
@@ -471,14 +439,11 @@ svg {
     border: 8px solid $primaryColor;
     margin: 0 auto;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex(column, center, center);
 
     h3 {
       font-size: 2rem;
-      color: #111;
+      color: $offBlack;
       z-index: 3;
       opacity: 0;
       transition: .6s;
@@ -487,7 +452,7 @@ svg {
     p {
       margin-top: 15px;
       width: 80%;
-      color: #111;
+      color: $offBlack;
       z-index: 3;
       opacity: 0;
       transition: .5s;
@@ -504,14 +469,12 @@ svg {
 
     .fa-github,
     .fa-globe {
-      color: #111;
+      color: $offBlack;
     }
 
     .tech {
+      @include fixed(absolute, 170px, auto, auto, 158px);
       opacity: 0;
-      position: absolute;
-      top: 170px;
-      left: 158px;
       font-size: 2.5rem;
     }
 
@@ -523,21 +486,10 @@ svg {
       left: 190px;
     }
 
-    .tech1-display {
-      animation: slideIn 1.5s ease-out forwards;
-    }
-
-    .tech2-display {
-      animation: slideIn2 1.5s ease-out forwards;
-    }
-
-    .tech3-display {
-      animation: slideIn3 1.5s ease-out forwards;
-    }
-
-    .tech4-display {
-      animation: slideIn4 1.5s ease-out forwards;
-    }
+    .tech1-display { animation: slideIn 1.5s ease-out forwards }
+    .tech2-display { animation: slideIn2 1.5s ease-out forwards }
+    .tech3-display { animation: slideIn3 1.5s ease-out forwards }
+    .tech4-display { animation: slideIn4 1.5s ease-out forwards }
 
     .icons-container {
       display: grid;
@@ -547,7 +499,7 @@ svg {
       h4 {
         text-align: center;
         font-size: 1.3rem;
-        color: #111;
+        color: $offBlack;
         opacity: 0;
         transition: .5s;
       }
@@ -565,11 +517,7 @@ svg {
 
     &::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
+      @include fixed(absolute, 0, 0, 0, 0);
       background: rgba(230, 230, 230, 0.9);
       border-radius: 50%;
       transition: .5s;
@@ -586,6 +534,90 @@ svg {
     }
   }
 }
+
+
+//////////// CONTACT SECTION //////////////
+
+
+.contact {
+  height: 40vh;
+  display: grid;
+  width: 60%;
+  max-width: 700px;
+  margin: 50px auto;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+
+  i {
+    font-size: 8rem;
+    text-align: center;
+    color: $offBlack;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .fa-envelope:hover ~ .email-popup,
+  .fa-envelope:hover ~ .email-notch {
+    opacity: 1;
+    transition: .5s;
+  }
+
+  a {
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .fa-linkedin { color: #0077b5 }
+}
+
+.email-container { position: relative }
+
+.email-notch {
+  width: 20px;
+  height: 20px;
+  top: 127.6px;
+  background: $darkGrey;
+  -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  position: absolute;
+  border: none;
+  opacity: 0;
+  transition: .5s;
+}
+
+.email-popup {
+  @include fixed(absolute, 140px, auto, auto, -9px);
+  @include flex(auto, center, center);
+  opacity: 0;
+  transition: .5s;
+  width: 150px;
+  height: 80px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: 'Raleway';
+  color: $offWhite;
+  background: $darkGrey;
+  border: none;
+  text-align: center;
+}
+
+.copied {
+  transition: .5s;
+  animation: copied .6s forwards;
+}
+
+.copied-notch {
+  transition: .6s;
+  animation: copiednotch .6s forwards;
+}
+
+
+//////// ANIMATIONS //////////
+
 
 @keyframes slideIn {
     from { 
@@ -631,125 +663,23 @@ svg {
     }
 }
 
-.wheel-of-fortune {
-  @include project('../assets/wheel-of-fortune.png');
-}
-
-.plenty-of-phish {
-  @include project('../assets/plenty-of-phish.png');
-}
-
-.rabbit-hole {
-  @include project('../assets/rabbit-hole.png');
-}
-
-.comp-challenge {
-  @include project('../assets/comp-challenge.png');
-}
-
-.contact {
-  height: 40vh;
-  display: grid;
-  width: 60%;
-  max-width: 700px;
-  margin: 50px auto;
-  grid-gap: 50px;
-  grid-template-columns: repeat(3, 1fr);
-
-  i {
-    font-size: 8rem;
-    text-align: center;
-    color: black;
-    cursor: pointer;
-    position: relative;
-  }
-
-  .fa-envelope:hover ~ .email-popup,
-  .fa-envelope:hover ~ .email-notch {
-    opacity: 1;
-    transition: .5s;
-  }
-
-  a {
-    height: 130px;
-    width: 130px;
-    cursor: pointer;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .fa-linkedin {
-    color: #0077b5;
-  }
-}
-
-.email-container {
-  position: relative;
-}
-
-.email-notch {
-  width: 20px;
-  height: 20px;
-  top: 127.6px;
-  background: rgb(100, 100, 100);
-  -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
-  clip-path: polygon(50% 0%, 0 62%, 100% 62%);
-  position: absolute;
-  border: none;
-  opacity: 0;
-  transition: .5s;
-}
-
-.email-popup {
-  opacity: 0;
-  transition: .5s;
-  position: absolute;
-  width: 150px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 140px;
-  left: -9px;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 3px;
-  font-family: 'Raleway';
-  color: #eee;
-  background: rgb(100, 100, 100);
-  border: none;
-  text-align: center;
-}
-
-.copied {
-  transition: .5s;
-  animation: copied .6s forwards;
-}
-
-.copied-notch {
-  transition: .6s;
-  animation: copiednotch .6s forwards;
-}
-
 @keyframes copied {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  0%, 100% { transform: scale(1) }
+  50% { transform: scale(1.1) }
 }
 
 @keyframes copiednotch {
-  0%, 100% {
-    transform: scale(1) translateY(0) translateX(0);
-  }
-  50% {
-    transform: scale(1.05) translateY(-3px) translateX(-3px);
-  }
+  0%, 100% { transform: scale(1) translateY(0) translateX(0) }
+  50% { transform: scale(1.05) translateY(-3px) translateX(-3px) }
 }
 
 
+////////// MEDIA QUERIES ////////////
+
+
+@media screen and (max-width: 950px) {
+
+}
 
 
 

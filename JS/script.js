@@ -32,7 +32,6 @@ function checkContact() {
   }
 }
 
-
 $('.hamburger').on('click', () => {
   $('header').addClass('menu-rotate');
 });

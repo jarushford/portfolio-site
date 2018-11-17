@@ -2,6 +2,30 @@
   font-family: "Soap";
   src: url("../assets/Soap_Regular.ttf");
 }
+.fa-react {
+  color: #61dafb;
+}
+
+.fa-html5 {
+  color: #dd4b24;
+}
+
+.fa-css3-alt {
+  color: #249cd9;
+}
+
+.fa-sass {
+  color: #c76494;
+}
+
+.fa-js {
+  color: #f0db4f;
+}
+
+svg {
+  width: 150px;
+}
+
 * {
   box-sizing: border-box;
   font-size: 10px;
@@ -15,6 +39,34 @@ body {
   background-size: cover;
   font-family: "Raleway", sans-serif;
   transition: 1.6s;
+}
+
+.wheel-of-fortune {
+  background: url("../assets/wheel-of-fortune.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.plenty-of-phish {
+  background: url("../assets/plenty-of-phish.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.rabbit-hole {
+  background: url("../assets/rabbit-hole.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+}
+
+.comp-challenge {
+  background: url("../assets/comp-challenge.png");
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
 }
 
 .angled-header-one {
@@ -41,17 +93,31 @@ body {
   transition: 1.2s;
 }
 
+.subtitle {
+  color: #79313d;
+  font-size: 1.6rem;
+  font-family: "Soap", sans-serif;
+  letter-spacing: 10px;
+  margin-top: 20px;
+  z-index: 10;
+  cursor: default;
+  transition: 1.5s;
+}
+
 header {
   height: 55vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   position: relative;
 }
 header i {
   position: fixed;
   top: 59vh;
+  right: auto;
+  bottom: auto;
+  left: auto;
   font-size: 5rem;
   color: #843543;
   transition: 1.5s;
@@ -78,17 +144,6 @@ h1 span {
   margin-left: 90px;
 }
 
-.subtitle {
-  color: #79313d;
-  font-size: 1.6rem;
-  font-family: "Soap", sans-serif;
-  letter-spacing: 10px;
-  margin-top: 20px;
-  z-index: 10;
-  cursor: default;
-  transition: 1.5s;
-}
-
 .alt-header h2 {
   color: #c5652a;
   font-size: 2.2rem;
@@ -97,6 +152,7 @@ h1 span {
   margin-top: auto;
   z-index: 10;
   cursor: default;
+  transition: 1.5s;
   position: fixed;
   top: 10px;
   left: 15px;
@@ -109,8 +165,8 @@ h1 span {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #aecbdc;
   align-items: center;
+  background: #aecbdc;
   opacity: 0;
   transition: 0.5s;
   cursor: pointer;
@@ -125,6 +181,7 @@ h1 span {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   z-index: 3;
   opacity: 0;
   cursor: pointer;
@@ -144,87 +201,6 @@ h1 span {
   background: #c5652a;
   transition: 1s;
   border-radius: 1px;
-}
-
-.about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: -100px;
-  opacity: 0;
-  transition: 1s;
-}
-.about .headshot {
-  border-radius: 50%;
-  border: 8px solid #c5652a;
-  width: 450px;
-}
-.about h3 {
-  color: #c5652a;
-  font-size: 3rem;
-  font-family: "Soap", sans-serif;
-  letter-spacing: 1px;
-  margin-top: 15px;
-  z-index: 10;
-  cursor: default;
-  font-family: "Raleway";
-  text-shadow: 0 0 7px rgba(255, 255, 255, 0.6);
-  background: #dedede;
-  padding: 7px;
-  z-index: 0;
-  border-radius: 3px;
-  position: relative;
-}
-.about h5 {
-  width: 70%;
-  font-size: 1.3rem;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  line-height: 35px;
-  text-align: center;
-  background: #dedede;
-  border-radius: 3px;
-  color: #696969;
-  padding: 12px;
-  z-index: 0;
-  position: relative;
-}
-.about h5 span {
-  color: #c5652a;
-  cursor: pointer;
-  transition: 0.4s;
-}
-.about h5 span a {
-  text-decoration: none;
-  transition: 0.4s;
-}
-.about h5 span a:visited {
-  color: #c5652a;
-}
-.about h5 span:hover,
-.about h5 span a:hover {
-  color: #d77a41;
-  transition: 0.4s;
-}
-
-.callout-notch {
-  width: 40px;
-  height: 40px;
-  transform: rotate(45deg);
-  background: #dedede;
-  position: absolute;
-  z-index: -1;
-}
-
-.notch1 {
-  top: 5px;
-  left: -5px;
-}
-
-.notch2 {
-  top: 25px;
-  right: -5px;
 }
 
 .header-animation .angled-header-one {
@@ -281,6 +257,50 @@ h1 span {
   transition: ease 1s;
 }
 
+.menu {
+  position: fixed;
+  top: 65px;
+  left: 15px;
+  display: flex;
+  flex-direction: auto;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.menu-items {
+  display: flex;
+  margin-left: 20px;
+}
+
+.menu-item {
+  color: #79313d;
+  font-size: 1.2rem;
+  font-family: "Soap", sans-serif;
+  letter-spacing: 4px;
+  margin-top: auto;
+  z-index: 10;
+  cursor: default;
+  transition: 1.5s;
+  margin: auto 10px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: 0.9s;
+}
+
+.fa-chevron-circle-up {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 2.7rem;
+  color: #c5652a;
+  cursor: pointer;
+  text-shadow: 0 0 20px #DDD;
+  opacity: 0;
+  transition: 0.7s;
+}
+
 .project-color h2, .project-color ~ .about, .project-color ~ .fa-chevron-circle-up {
   color: #0d9a9d;
   transition: 1s;
@@ -299,50 +319,86 @@ h1 span {
   background: #843543;
 }
 
-.menu {
-  position: fixed;
-  top: 65px;
-  left: 15px;
+.about {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  z-index: 10;
+  margin-top: -100px;
+  opacity: 0;
+  transition: 1s;
 }
-
-.menu-items {
-  display: flex;
-  margin-left: 20px;
+.about .headshot {
+  border-radius: 50%;
+  border: 8px solid #c5652a;
+  width: 450px;
 }
-
-.menu-item {
-  color: #79313d;
-  font-size: 1.2rem;
+.about h3 {
+  color: #c5652a;
+  font-size: 3rem;
   font-family: "Soap", sans-serif;
-  letter-spacing: 4px;
-  margin-top: auto;
+  letter-spacing: 1px;
+  margin-top: 15px;
   z-index: 10;
   cursor: default;
-  margin: auto 10px;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: 0.9s;
+  transition: 1.5s;
+  font-family: "Raleway";
+  text-shadow: 0 0 7px #DDD;
+  background: #DDD;
+  padding: 7px;
+  z-index: 0;
+  border-radius: 3px;
+  position: relative;
 }
-
-.fa-chevron-circle-up {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  font-size: 2.7rem;
+.about h5 {
+  width: 70%;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  line-height: 35px;
+  text-align: center;
+  background: #DDD;
+  border-radius: 3px;
+  color: #696969;
+  padding: 12px;
+  z-index: 0;
+  position: relative;
+}
+.about h5 span {
   color: #c5652a;
   cursor: pointer;
-  text-shadow: 0 0 20px white;
-  opacity: 0;
-  transition: 0.7s;
+  transition: 0.4s;
+}
+.about h5 span a {
+  text-decoration: none;
+  transition: 0.4s;
+}
+.about h5 span a:visited {
+  color: #c5652a;
+}
+.about h5 span:hover,
+.about h5 span a:hover {
+  color: #d77a41;
+  transition: 0.4s;
 }
 
-svg {
-  width: 150px;
+.callout-notch {
+  width: 40px;
+  height: 40px;
+  transform: rotate(45deg);
+  background: #DDD;
+  position: absolute;
+  z-index: -1;
+}
+
+.notch1 {
+  top: 5px;
+  left: -5px;
+}
+
+.notch2 {
+  top: 25px;
+  right: -5px;
 }
 
 .skills-grid {
@@ -364,6 +420,9 @@ svg {
 .skills-grid img {
   width: 130px;
 }
+.skills-grid .zelda {
+  font-size: 1.6rem;
+}
 .skills-grid h4 {
   text-align: center;
   margin-top: 15px;
@@ -373,35 +432,12 @@ svg {
   filter: blur(5px);
   transition: 0.7s;
 }
-.skills-grid .zelda {
-  font-size: 1.6rem;
-}
 .skills-grid i:hover ~ h4,
 .skills-grid img:hover ~ h4,
 .skills-grid svg:hover ~ h4 {
   opacity: 0.8;
   filter: blur(0.5px);
   transition: 0.7s;
-}
-
-.fa-react {
-  color: #61dafb;
-}
-
-.fa-html5 {
-  color: #dd4b24;
-}
-
-.fa-css3-alt {
-  color: #249cd9;
-}
-
-.fa-sass {
-  color: #c76494;
-}
-
-.fa-js {
-  color: #f0db4f;
 }
 
 .projects-header {
@@ -412,6 +448,7 @@ svg {
   margin-top: 50px;
   z-index: 10;
   cursor: default;
+  transition: 1.5s;
   text-align: center;
 }
 
@@ -423,6 +460,7 @@ svg {
   margin-top: 100px;
   z-index: 10;
   cursor: default;
+  transition: 1.5s;
   text-align: center;
 }
 
@@ -441,9 +479,9 @@ svg {
   margin: 0 auto;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 .projects .project h3 {
   font-size: 2rem;
@@ -536,6 +574,87 @@ svg {
   transition: 0.5s;
 }
 
+.contact {
+  height: 40vh;
+  display: grid;
+  width: 60%;
+  max-width: 700px;
+  margin: 50px auto;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.contact i {
+  font-size: 8rem;
+  text-align: center;
+  color: #111;
+  cursor: pointer;
+  position: relative;
+}
+.contact .fa-envelope:hover ~ .email-popup,
+.contact .fa-envelope:hover ~ .email-notch {
+  opacity: 1;
+  transition: 0.5s;
+}
+.contact a {
+  height: 130px;
+  width: 130px;
+  cursor: pointer;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact .fa-linkedin {
+  color: #0077b5;
+}
+
+.email-container {
+  position: relative;
+}
+
+.email-notch {
+  width: 20px;
+  height: 20px;
+  top: 127.6px;
+  background: #696969;
+  -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  clip-path: polygon(50% 0%, 0 62%, 100% 62%);
+  position: absolute;
+  border: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.email-popup {
+  opacity: 0;
+  transition: 0.5s;
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  display: flex;
+  flex-direction: auto;
+  justify-content: center;
+  align-items: center;
+  top: 140px;
+  left: -9px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: "Raleway";
+  color: #DDD;
+  background: #696969;
+  border: none;
+  text-align: center;
+}
+
+.copied {
+  transition: 0.5s;
+  animation: copied 0.6s forwards;
+}
+
+.copied-notch {
+  transition: 0.6s;
+  animation: copiednotch 0.6s forwards;
+}
+
 @keyframes slideIn {
   from {
     transform: rotate(0deg) translateX(170px) rotate(0deg);
@@ -576,114 +695,6 @@ svg {
     opacity: 1;
   }
 }
-.wheel-of-fortune {
-  background: url("../assets/wheel-of-fortune.png");
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.plenty-of-phish {
-  background: url("../assets/plenty-of-phish.png");
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.rabbit-hole {
-  background: url("../assets/rabbit-hole.png");
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.comp-challenge {
-  background: url("../assets/comp-challenge.png");
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s;
-}
-
-.contact {
-  height: 40vh;
-  display: grid;
-  width: 60%;
-  max-width: 700px;
-  margin: 50px auto;
-  grid-gap: 50px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.contact i {
-  font-size: 8rem;
-  text-align: center;
-  color: black;
-  cursor: pointer;
-  position: relative;
-}
-.contact .fa-envelope:hover ~ .email-popup,
-.contact .fa-envelope:hover ~ .email-notch {
-  opacity: 1;
-  transition: 0.5s;
-}
-.contact a {
-  height: 130px;
-  width: 130px;
-  cursor: pointer;
-  margin: 0 auto;
-  text-align: center;
-}
-.contact .fa-linkedin {
-  color: #0077b5;
-}
-
-.email-container {
-  position: relative;
-}
-
-.email-notch {
-  width: 20px;
-  height: 20px;
-  top: 127.6px;
-  background: #646464;
-  -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
-  clip-path: polygon(50% 0%, 0 62%, 100% 62%);
-  position: absolute;
-  border: none;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.email-popup {
-  opacity: 0;
-  transition: 0.5s;
-  position: absolute;
-  width: 150px;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 140px;
-  left: -9px;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 3px;
-  font-family: "Raleway";
-  color: #eee;
-  background: #646464;
-  border: none;
-  text-align: center;
-}
-
-.copied {
-  transition: 0.5s;
-  animation: copied 0.6s forwards;
-}
-
-.copied-notch {
-  transition: 0.6s;
-  animation: copiednotch 0.6s forwards;
-}
-
 @keyframes copied {
   0%, 100% {
     transform: scale(1);
