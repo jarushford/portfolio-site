@@ -80,7 +80,7 @@ svg {
 }
 .contact {
   height: 40vh;
-  width: 60%;
+  width: 84%;
   display: grid;
   max-width: 700px;
   margin: 50px auto;
@@ -488,6 +488,10 @@ svg {
   transition: 1.5s;
 }
 
+.subtitle-hidden {
+  display: none;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -710,6 +714,163 @@ h1 span {
   background: #843543;
 }
 
+@media screen and (max-width: 960px) {
+  .header-animation .angled-header-two {
+    transform: rotate(-14deg) translateY(-400px);
+  }
+
+  .alt-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .menu-rotate .angled-header-two {
+    transform: rotate(0deg) translateY(-330px);
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .email-notch {
+    top: 128px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .header-animation .angled-header-two {
+    transform: rotate(-14deg) translateY(-380px);
+  }
+
+  .alt-header h2 {
+    font-size: 2rem;
+  }
+
+  .menu-rotate .angled-header-two {
+    transform: rotate(0deg) translateY(-330px);
+  }
+
+  .contact {
+    width: 85%;
+  }
+
+  .skills-grid {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .subtitle {
+    font-size: 0.4rem;
+    width: 90%;
+  }
+
+  .subtitle-hidden {
+    color: #79313d;
+    font-size: 0.7rem;
+    font-family: "Soap", sans-serif;
+    letter-spacing: 10px;
+    margin-top: 20px;
+    z-index: 10;
+    cursor: default;
+    transition: 1.5s;
+    display: unset;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .header-animation h1,
+.header-animation .subtitle-hidden,
+.header-animation i {
+    opacity: 0;
+    transition: 0.6s;
+    cursor: default;
+  }
+
+  .about .headshot {
+    border-radius: 50%;
+    border: 8px solid #c5652a;
+    width: 300px;
+  }
+  .about h5 {
+    font-size: 1rem;
+    width: 85%;
+    line-height: 25px;
+  }
+
+  .alt-header h2 {
+    font-size: 1.5rem;
+    margin: 10px auto 0;
+  }
+
+  .header-animation .angled-header-two {
+    transform: rotate(-14deg) translateY(-370px);
+  }
+
+  .menu-rotate .angled-header-two {
+    transform: rotate(0deg) translateY(-330px);
+  }
+
+  .menu-item {
+    font-size: 0.8rem;
+  }
+
+  .contact {
+    height: 35vh;
+  }
+  .contact i {
+    font-size: 4.5rem;
+  }
+  .contact a {
+    width: 73px;
+  }
+  .contact .email-popup {
+    top: 93px;
+    opacity: 1;
+  }
+  .contact .email-notch {
+    top: 82px;
+    opacity: 1;
+  }
+
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .projects .project {
+    height: 300px;
+    width: 300px;
+  }
+  .projects .project h3 {
+    font-size: 1.3rem;
+  }
+  .projects .project i {
+    font-size: 2.5rem;
+    margin: 10px 30px;
+  }
+  .projects .project .icons-container h4 {
+    font-size: 1rem;
+  }
+  .projects .project .tech {
+    display: none;
+  }
+}
 @font-face {
   font-family: "Soap";
   src: url("../assets/Soap_Regular.ttf");

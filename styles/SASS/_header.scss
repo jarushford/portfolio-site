@@ -1,6 +1,7 @@
 .angled-header-one { @include angled-header($primaryColor, .45, -2) }
 .angled-header-two { @include angled-header($secondaryColor, .3, 6) }
 .subtitle { @include header-text(1.6rem, 10px, 20px, darken($accent, 3%)) }
+.subtitle-hidden { display: none }
 
 header {
   @include flex(column, center, center);
