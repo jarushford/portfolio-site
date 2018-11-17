@@ -148,3 +148,51 @@
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  .header-animation .angled-header-two {
+    transform: rotate(-14deg) translateY(-338px);
+  }
+
+  .menu-rotate .angled-header-two {
+    transform: rotate(0deg) translateY(-306px);
+  }
+
+  .menu-item {
+    font-size: .6rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  body {
+    width: 340px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-animation .angled-header-two {
+    transform: rotate(-14deg) translateY(-262px);
+  }
+
+  .menu-rotate .angled-header-two {
+    transform: rotate(0deg) translateY(-247px);
+  }
+
+  .menu-items {
+    margin-left: 5px;
+  }
+
+  .menu-item {
+    font-size: .4rem;
+  }
+
+  .about h3 {
+    font-size: 2rem;
+  }
+
+  .contact i {
+    font-size: 4rem;
+  }
+}
