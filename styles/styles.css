@@ -891,7 +891,7 @@ h1 span {
 }
 @media screen and (max-width: 400px) {
   .header-animation .angled-header-two {
-    transform: rotate(-14deg) translateY(-338px);
+    transform: rotate(-14deg) translateY(-306px);
   }
 
   .menu-rotate .angled-header-two {
