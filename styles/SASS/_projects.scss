@@ -2,6 +2,7 @@
 .plenty-of-phish { @include project('../assets/plenty-of-phish.png') }
 .rabbit-hole { @include project('../assets/rabbit-hole.png') }
 .comp-challenge { @include project('../assets/comp-challenge.png') }
+.headcount { @include project('../assets/headcount.png') }
 
 .projects-header {
   @include header-text(3rem, 4px, 50px, $primaryColor);
