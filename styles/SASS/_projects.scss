@@ -3,6 +3,7 @@
 .rabbit-hole { @include project('../assets/rabbit-hole.png') }
 .comp-challenge { @include project('../assets/comp-challenge.png') }
 .headcount { @include project('../assets/headcount.png') }
+.new-scope { @include project('../assets/new-scope.png') }
 
 .projects-header {
   @include header-text(3rem, 4px, 50px, $primaryColor);

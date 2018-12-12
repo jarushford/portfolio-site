@@ -41,7 +41,7 @@
 .email-notch {
   @include fade(0, .5s);
   @include size(20px, 20px);
-  @include fixed(absolute, 127.6px, auto, auto, auto);
+  @include fixed(absolute, 127.8px, auto, auto, auto);
   background: $darkGrey;
   -webkit-clip-path: polygon(50% 0%, 0 62%, 100% 62%);
   clip-path: polygon(50% 0%, 0 62%, 100% 62%);
