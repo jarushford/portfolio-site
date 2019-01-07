@@ -1,7 +1,7 @@
 .wheel-of-fortune { @include project('../assets/wheel-of-fortune.png') }
 .plenty-of-phish { @include project('../assets/plenty-of-phish.png') }
 .rabbit-hole { @include project('../assets/rabbit-hole.png') }
-.comp-challenge { @include project('../assets/comp-challenge.png') }
+.comp-challenge { @include project('../assets/mario.gif') }
 .headcount { @include project('../assets/headcount.png') }
 .new-scope { @include project('../assets/new-scope.png') }
 
@@ -107,7 +107,8 @@
     &:hover::before,
     &:hover h3,
     &:hover i,
-    &:hover p {
+    &:hover p,
+    &:hover div {
       @include fade(1, .5s);
     }
   }

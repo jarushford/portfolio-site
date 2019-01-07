@@ -87,6 +87,7 @@ svg {
   grid-gap: 50px;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .contact i {
   font-size: 8rem;
   text-align: center;
@@ -96,15 +97,18 @@ svg {
   z-index: 51;
   transition: ease-out 0.3s;
 }
+
 .contact i:hover {
   transform: scale(1.05);
   transition: ease-out 0.3s;
 }
+
 .contact .fa-envelope:hover ~ .email-popup,
 .contact .fa-envelope:hover ~ .email-notch {
   opacity: 1;
   transition: 0.5s;
 }
+
 .contact a {
   height: 130px;
   width: 130px;
@@ -112,6 +116,7 @@ svg {
   margin: 0 auto;
   text-align: center;
 }
+
 .contact .fa-linkedin {
   color: #0077b5;
 }
@@ -243,6 +248,7 @@ svg {
   grid-gap: 50px 20px;
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
 }
+
 .projects .project {
   display: flex;
   flex-direction: column;
@@ -255,6 +261,7 @@ svg {
   margin: 0 auto;
   position: relative;
 }
+
 .projects .project h3 {
   opacity: 0;
   transition: 0.6s;
@@ -262,6 +269,7 @@ svg {
   color: #111;
   z-index: 3;
 }
+
 .projects .project p {
   opacity: 0;
   transition: 0.5s;
@@ -272,16 +280,24 @@ svg {
   text-align: center;
   line-height: 23px;
 }
+
 .projects .project i {
   opacity: 0;
   transition: 0.6s;
   font-size: 4rem;
   margin: 20px 30px;
 }
+
 .projects .project .fa-github,
 .projects .project .fa-globe {
   color: #111;
 }
+
+.projects .project .disabled-link {
+  opacity: 0;
+  cursor: default;
+}
+
 .projects .project .tech {
   position: absolute;
   top: 170px;
@@ -291,9 +307,11 @@ svg {
   opacity: 0;
   font-size: 2.5rem;
 }
+
 .projects .project .fa-js {
   color: #dfc513;
 }
+
 .projects .project .jquery-tech,
 .projects .project .sketch-tech {
   height: 50px;
@@ -304,23 +322,29 @@ svg {
   bottom: auto;
   left: 190px;
 }
+
 .projects .project .tech1-display {
   animation: slideIn 1.5s ease-out forwards;
 }
+
 .projects .project .tech2-display {
   animation: slideIn2 1.5s ease-out forwards;
 }
+
 .projects .project .tech3-display {
   animation: slideIn3 1.5s ease-out forwards;
 }
+
 .projects .project .tech4-display {
   animation: slideIn4 1.5s ease-out forwards;
 }
+
 .projects .project .icons-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   z-index: 3;
 }
+
 .projects .project .icons-container h4 {
   opacity: 0;
   transition: 0.5s;
@@ -328,11 +352,13 @@ svg {
   font-size: 1.3rem;
   color: #111;
 }
+
 .projects .project .icons-container .github:hover ~ .view-code,
 .projects .project .icons-container .site:hover ~ .live-site {
   opacity: 1;
   transition: 0.5s;
 }
+
 .projects .project::before {
   position: absolute;
   top: 0;
@@ -346,6 +372,7 @@ svg {
   border-radius: 50%;
   z-index: 2;
 }
+
 .projects .project:hover::before, .projects .project:hover h3, .projects .project:hover i, .projects .project:hover p {
   opacity: 1;
   transition: 0.5s;
@@ -360,11 +387,13 @@ svg {
   transition: 1s;
   margin-top: -100px;
 }
+
 .about .headshot {
   border-radius: 50%;
   border: 8px solid #c5652a;
   width: 450px;
 }
+
 .about h3 {
   color: #c5652a;
   font-size: 3rem;
@@ -382,6 +411,7 @@ svg {
   border-radius: 3px;
   position: relative;
 }
+
 .about h5 {
   width: 70%;
   font-size: 1.3rem;
@@ -395,18 +425,22 @@ svg {
   z-index: 0;
   position: relative;
 }
+
 .about h5 span {
   color: #c5652a;
   cursor: pointer;
   transition: 0.4s;
 }
+
 .about h5 span a {
   text-decoration: none;
   transition: 0.4s;
 }
+
 .about h5 span a:visited {
   color: #c5652a;
 }
+
 .about h5 span:hover,
 .about h5 span a:hover {
   color: #d77a41;
@@ -444,26 +478,32 @@ svg {
   grid-gap: 25px 20px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
+
 .skills-grid div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
+
 .skills-grid i {
   font-size: 6rem;
 }
+
 .skills-grid img {
   width: 120px;
 }
+
 .skills-grid .zelda,
 .skills-grid .router h4,
 .skills-grid .sketch h4 {
   font-size: 1.6rem;
 }
+
 .skills-grid .zelda img {
   width: 150px;
 }
+
 .skills-grid h4 {
   opacity: 0;
   transition: 0.7s;
@@ -473,6 +513,7 @@ svg {
   color: #843543;
   filter: blur(5px);
 }
+
 .skills-grid i:hover ~ h4,
 .skills-grid img:hover ~ h4,
 .skills-grid svg:hover ~ h4 {
@@ -530,6 +571,7 @@ header {
   height: 55vh;
   position: relative;
 }
+
 header i {
   position: fixed;
   top: 59vh;
@@ -542,6 +584,7 @@ header i {
   cursor: pointer;
   z-index: 10;
 }
+
 header i:hover {
   color: #c5652a;
   transform: scale(1.1) translateY(4px);
@@ -559,6 +602,7 @@ h1 {
   cursor: default;
   transition: 1.5s;
 }
+
 h1 span {
   display: block;
   margin-left: 90px;
@@ -581,6 +625,7 @@ h1 span {
   opacity: 0;
   transition: 0.5s;
 }
+
 .alt-header .hamburger {
   height: 42px;
   width: 50px;
@@ -594,6 +639,7 @@ h1 span {
   background: #aecbdc;
   transition: 0.5s;
 }
+
 .alt-header .hamburger-exit {
   position: absolute;
   top: auto;
@@ -610,14 +656,17 @@ h1 span {
   justify-content: space-between;
   align-items: center;
 }
+
 .alt-header .exit1 {
   transform: rotate(45deg);
   transform-origin: left;
 }
+
 .alt-header .exit2 {
   transform: rotate(-45deg) translateX(-3px) translateY(2px);
   transform-origin: left;
 }
+
 .alt-header .hamburger-bar,
 .alt-header .exit-bar {
   height: 10px;
@@ -632,6 +681,7 @@ h1 span {
   transform: rotate(20deg) translateY(-480px);
   transition: 1.2s;
 }
+
 .header-animation .angled-header-two {
   opacity: 0.95;
   transition: 1.2s;
@@ -639,15 +689,18 @@ h1 span {
   transform: rotate(-14deg) translateY(-425px);
   background-color: #aac6d8;
 }
+
 .header-animation h2,
 .header-animation .hamburger, .header-animation ~ .about, .header-animation ~ .fa-chevron-circle-up {
   opacity: 1;
   transition: 1s;
 }
+
 .header-animation .hamburger-exit {
   opacity: 1;
   transition: 1s 1s;
 }
+
 .header-animation h1,
 .header-animation .subtitle,
 .header-animation i {
@@ -661,19 +714,23 @@ h1 span {
   background: #479ace;
   opacity: 0.9;
 }
+
 .menu-rotate .menu-item {
   opacity: 1;
   transition: 1.9s;
   transform: translateY(0px);
 }
+
 .menu-rotate .alt-header h2 {
   color: #843543;
 }
+
 .menu-rotate .alt-header .hamburger-bar,
 .menu-rotate .alt-header .exit-bar {
   background-color: #843543;
   transition: 1s;
 }
+
 .menu-rotate .alt-header .hamburger {
   height: 0;
   margin-top: 43px;
@@ -727,6 +784,7 @@ h1 span {
   cursor: pointer;
   text-shadow: 0 0 20px #DDD;
 }
+
 .fa-chevron-circle-up:hover {
   transform: translateY(-3px);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -737,6 +795,7 @@ h1 span {
   color: #0d9a9d;
   transition: 1s;
 }
+
 .project-color .hamburger-bar,
 .project-color .exit-bar {
   background: #0d9a9d;
@@ -746,6 +805,7 @@ h1 span {
   color: #843543;
   transition: 1s;
 }
+
 .contact-color .hamburger-bar,
 .contact-color .exit-bar {
   background: #843543;
@@ -846,6 +906,7 @@ h1 span {
     border: 8px solid #c5652a;
     width: 300px;
   }
+
   .about h5 {
     font-size: 1rem;
     width: 85%;
@@ -872,16 +933,20 @@ h1 span {
   .contact {
     height: 35vh;
   }
+
   .contact i {
     font-size: 4.5rem;
   }
+
   .contact a {
     width: 73px;
   }
+
   .contact .email-popup {
     top: 93px;
     opacity: 1;
   }
+
   .contact .email-notch {
     top: 82px;
     opacity: 1;
@@ -890,20 +955,25 @@ h1 span {
   .projects {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+
   .projects .project {
     height: 300px;
     width: 300px;
   }
+
   .projects .project h3 {
     font-size: 1.3rem;
   }
+
   .projects .project i {
     font-size: 2.5rem;
     margin: 10px 30px;
   }
+
   .projects .project .icons-container h4 {
     font-size: 1rem;
   }
+
   .projects .project .tech {
     display: none;
   }
@@ -972,5 +1042,12 @@ body {
   font-family: "Raleway", sans-serif;
   transition: 1.6s;
 }
+
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.scss.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.scss.map */
 
 /*# sourceMappingURL=styles.css.map */
