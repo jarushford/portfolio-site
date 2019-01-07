@@ -196,8 +196,8 @@ svg {
   transition: 0.5s;
 }
 
-.comp-challenge {
-  background: url("../assets/comp-challenge.png");
+.mario {
+  background: url("../assets/mario.png");
   background-size: cover;
   background-position: center;
   transition: 0.5s;
@@ -1043,6 +1043,8 @@ body {
   transition: 1.6s;
 }
 
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.scss.map */
 /*# sourceMappingURL=styles.css.map */
 /*# sourceMappingURL=main.scss.map */
 /*# sourceMappingURL=styles.css.map */
