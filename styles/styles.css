@@ -515,10 +515,6 @@ svg {
   width: 150px;
 }
 
-.skills-grid .travis img {
-  width: 170px;
-}
-
 .skills-grid h4 {
   opacity: 0;
   transition: 0.7s;
@@ -1058,6 +1054,8 @@ body {
   transition: 1.6s;
 }
 
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.scss.map */
 /*# sourceMappingURL=styles.css.map */
 /*# sourceMappingURL=main.scss.map */
 /*# sourceMappingURL=styles.css.map */
